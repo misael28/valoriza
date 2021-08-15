@@ -1,5 +1,5 @@
 import { getCustomRepository } from "typeorm";
-import { UserRepositories } from "../repositories/UserRepositores";
+import { UserRepositories } from "../repositories/UserRepositories";
 
 interface IUserRequest {
   name: string;

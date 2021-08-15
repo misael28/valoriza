@@ -15,7 +15,7 @@ class CreateUser {
       throw new Error("Email incorrect");
     }
 
-    const userExists = userRepositories.findOne({
+    const userExists = await userRepositories.findOne({
       email,
     });
 

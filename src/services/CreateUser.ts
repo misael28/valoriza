@@ -1,3 +1,4 @@
+import { getCustomRepository } from "typeorm";
 import { UserRepositories } from "../repositories/UserRepositores";
 
 interface IUserRequest {
@@ -8,7 +9,7 @@ interface IUserRequest {
 
 class CreateUser {
   async execute({ name, email, admin }: IUserRequest) {
-    const userRepositories = new UserRepositories();
+    const userRepositories = getCustomRepository(UserRepositories);
 
     if (!email) {
       throw new Error("Email incorrect");

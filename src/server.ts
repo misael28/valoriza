@@ -1,11 +1,10 @@
 import express from "express";
 import "reflect-metadata";
 import "./database";
+import { router } from "./routes";
 
 const app = express();
-
-app.get("/test", (req, res) => {
-  res.status(200).send("ola");
-});
+app.use(express.json());
+app.use(router);
 
 app.listen(3000, () => console.log("server is running bitch!"));

@@ -1,5 +1,8 @@
 ## NLW Valoriza
 
+## Description
+
+Api de criação de elogios e tags para colegas de trabalho :)
 ## Rules
 
 - Cadastro de usuarios

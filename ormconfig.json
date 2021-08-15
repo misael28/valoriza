@@ -1,0 +1,9 @@
+{
+  "type": "sqlite",
+  "migrations": ["src/database/migrations/*.ts"],
+  "database": "src/database/database.sqlite",
+  "cli": {
+    "migrationsDir": "src/database/migrations",
+    "entitiesDir": "src/entity"
+  }
+}

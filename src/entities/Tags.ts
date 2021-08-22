@@ -2,12 +2,13 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryColumn,
   UpdateDateColumn,
 } from "typeorm";
 
 import { v4 as uuid } from "uuid";
-
+import { Compliments } from "./Compliments";
 @Entity("tags")
 export class Tags {
   @PrimaryColumn()
@@ -21,6 +22,9 @@ export class Tags {
 
   @UpdateDateColumn()
   update_at: Date;
+
+  @OneToMany(() => Compliments, (compliment) => compliment.tag_id)
+  compliment: Compliments[];
 
   constructor() {
     if (!this.id) {

@@ -4,8 +4,10 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from "typeorm";
 import { v4 as uuid } from "uuid";
+import { Compliments } from "./Compliments";
 @Entity("users")
 export class User {
   @PrimaryColumn()
@@ -28,6 +30,12 @@ export class User {
 
   @UpdateDateColumn()
   update_at: Date;
+
+  @OneToMany(() => Compliments, (compliment) => compliment.user_send)
+  compliment_send: Compliments[];
+
+  @OneToMany(() => Compliments, (compliment) => compliment.user_receiver)
+  compliment_receiver: Compliments[];
 
   constructor() {
     if (!this.id) {

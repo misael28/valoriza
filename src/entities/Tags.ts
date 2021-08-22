@@ -23,7 +23,7 @@ export class Tags {
   @UpdateDateColumn()
   update_at: Date;
 
-  @OneToMany(() => Compliments, (compliment) => compliment.tag_id)
+  @OneToMany(() => Compliments, (compliment) => compliment.tag)
   compliment: Compliments[];
 
   constructor() {

@@ -24,13 +24,13 @@ export class Compliments {
   update_at: Date;
 
   @ManyToOne(() => User, (user) => user.id)
-  user_send: User;
+  user_send: string;
 
   @ManyToOne(() => User, (user) => user.id)
-  user_receiver: User;
+  user_receiver: string;
 
   @ManyToOne(() => Tags, (tag) => tag.id)
-  tag_id: Tags;
+  tag: string;
 
   constructor() {
     if (!this.id) {
